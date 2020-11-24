@@ -14,7 +14,7 @@ Here are the steps i did in order to train a model:
 8. I trained the model twice.First time with training dataset(containing 600 images) and validation dataset(300 images which is originally for testing ).Once i got the approximate number of steps around which my model trained for the first time. On second run , i trained the model straight to that number of steps that is 22768.(The reason i didn't train the model in single run only because i had limited 900 pictures only in which 600 for training and 300 for testing. I didn't want to further split training dataset into (training and validation dataset).  
 9. i have attached a picture in results folder of mAP calculated during first training run with name mAP1 ![Screenshot](mAP1.png) and for second training picture is named as mAP2 available in results folder.  
 10. I have also attaced PR(precision recall) curves of it in the results folder.One PR curve out of three is shown here.It is for prohibitory sign.![Screenshot](PR_prohibitory.png)  
-Testing samples are also attached in result folder.Two of the testing images are shown below. ![Screenshot](test_image7.png)  
+Testing samples are also attached in result folder.Two of the testing images are shown below. ![Screenshot](test_image.png)  
 ![Screenshot](test_image4.png)
 11. Inference graph of my model can be downloaded from the link. https://drive.google.com/file/d/1CEd_Grc3Vqmlmko0U6ggWEAtGspkwxrA/view?usp=sharing  
 12. Then i implemented this model on raspberry pi 4. I got FPS from (1.6 - 2.1) FPS.  
