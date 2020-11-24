@@ -1,9 +1,9 @@
 # Real-Time-Traffic-Sign-Detection
-I have trained SSDlite-MobilenetV2 Model on GTSDB. I was able to achieve 75% mAP on testing dataset of GTSDB. It took me 22768 steps to train the model. Afterwards my validation accuracy started to decrease.  
+Hi there, I have trained SSDlite-MobilenetV2 Model on GTSDB. I was able to achieve 75% mAP on testing dataset of GTSDB. It took me 22768 steps to train the model. Afterwards my validation accuracy started to decrease.  
 The reason why i selected SSDlite because we made use of researchers work which shows that ssd-mobilnet is the fastest and lightest model in terms of memory consumption.Further details can be found in this link. https://github.com/aarcosg/traffic-sign-detection  
-In the link above, they have discussed about ssd model instead of ssdlite. SSDlite is slightly better in terms of FPS on embedded device.  
+In the link above, they have discussed about ssd model instead of ssdlite. SSDlite is slightly better in terms of FPS on embedded device, in my case I am using R-pi4.  
 I also trained ssd-mobilenetv2 with ssdlite-mobilenetv2. After training both models,i have concluded that both have same mAP on testing dataset .While during implementation on raspberry pi 4 , we had 30% more FPS using ssdlite.  
-Here are the steps i did in order to train a model:    
+Here are the steps I did in order to train a model:    
 1. First of all i downloaded the GTSDB dataset from this link https://sid.erda.dk/public/archives/ff17dc924eba88d5d01a807357d6614c/published-archive.html  
 2. The dataset is in PPM format so i converted them to png format through the code i provided in (ppm to png.py) above in files section.  
 3. Then i created tensorflow record(tfrecord) file.Generate_tfrecord.py is also provided above in order to convert images and csv file into tfrecord. You can take help from the link https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10  
@@ -15,9 +15,9 @@ Here are the steps i did in order to train a model:
 9. i have attached a picture in results folder of mAP calculated during first training run with name mAP1 ![Screenshot](mAP1.png) and for second training picture is named as mAP2 available in results folder.  
 10. I have also attaced PR(precision recall) curves of it in the results folder.One PR curve out of three is shown here.It is for prohibitory sign.![Screenshot](PR_prohibitory.png)  
 Testing samples are also attached in result folder.Two of the testing images are shown below. ![Screenshot](test_image7.png)  
-![Screenshot](test_image.png)
+![Screenshot](test_image4.png)
 11. Inference graph of my model can be downloaded from the link. https://drive.google.com/file/d/1CEd_Grc3Vqmlmko0U6ggWEAtGspkwxrA/view?usp=sharing  
-12. Then i implemented this model on raspberry pi 4. I got FPS from (1.6 - 2.1) FPS.  
-13. I also added audio assist system to it. The model says the name of the class of traffic sign it detected.    
+12. Then i implemented this model on raspberry pi 4. I got FPS from (1.6 - 2.1) FPS. Although this might seem not enough, but yet it is sufficient for real time detection.
+13. The model is also capable to speak aloud sign class as the sign is detected, hence adding an Audio Assist feature for drivers convinience.   
   
 
